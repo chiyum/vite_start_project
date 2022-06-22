@@ -8,8 +8,13 @@ import layouts from "@/_app/layouts";
 import components from "@/_app/components";
 import store from "@/store";
 import router from "./router";
-const app = createApp(App);
+/* 插件 */
+import sweetalert from "@/plugins/sweetalert";
+import storage from "@/plugins/storage";
 
+const app = createApp(App);
+app.provide("$storage", storage);
+app.provide("$swal", sweetalert);
 app.use(layouts);
 app.use(components);
 app.use(store);
