@@ -18,8 +18,15 @@ module.exports = {
     "plugin:prettier/recommended",
     "eslint:recommended",
   ],
-  plugins: ["prettier"],
+  parser: "vue-eslint-parser",
+  plugins: ["prettier", "vue"],
   ignorePatterns: ["public/*"],
   // add your custom rules here
-  rules: {},
+  rules: {
+    'vue/experimental-script-setup-vars': 'off',
+    'vue/component-definition-name-casing': 'off',
+    'vue/name-property-casing': 'off',
+    'vue/name-property-casing': 'off',
+    'vue/component-name-in-template-casing': 'off',
+  },
 };

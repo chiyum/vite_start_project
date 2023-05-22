@@ -1,7 +1,28 @@
-# Vue 3 + Vite
+# vietvip web 版
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Version
 
-## Recommended IDE Setup
+- **Node.js** v12.19.0
+- **yarn** v1.22.10
+- **vue** v3.0.2
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+## Config
+
+- **.env.development** 開發模式
+- **.env.production** 生產模式
+
+## Setup
+
+```
+yarn install
+```
+
+### Compiles and minifies for production
+
+```
+yarn build
+```
+
+### Deploy
+
+執行 compile 之後根目錄下產生 `/dist` 檔案夾

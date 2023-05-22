@@ -17,7 +17,9 @@ for (let path in files) {
     meta: {
       //頁面layout
       layout: defaults[path].default.layout || "layout-default",
-      title: defaults[path].default.title ?? "",
+      title: defaults[path].default?.title ?? "",
+      header: defaults[path].default?.header ?? "header-default",
+      scroll: defaults[path].default?.noScroll ?? false,
     },
     component: files[path], //頁面component
   });

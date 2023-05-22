@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <meta name="description"
+    content="just a start project">
+  <meta name="subject" content="<%= subject %>">
+  <meta name="keywords" content="<%= keyword %>">
+  <!-- <link id="icon" rel="icon" href="/public/default_foreground.png"> -->
+  <link id="icon" rel="icon" href="/public/<%= logo %>">
+  <title>
+    <%- title %>
+  </title>
+  <script rel="preload" type="text/javascript">
+   const preloadFns = () => {
+    console.log("proload before main.js");
+   }
+  </script>
+</head>
+
+<body>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+  <script type="module" src="/src/main.js" defer></script>
+</body>
+
 </html>

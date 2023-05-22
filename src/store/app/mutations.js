@@ -1,6 +1,17 @@
 const mutations = {
-  "set/helloword"(state, payload) {
-    state.helloword = payload;
+  /** popup */
+  "set/popup"(state, payload) {
+    state.popupState = {
+      ...payload,
+      $display: true,
+      $timestamp: Date.now(),
+    };
+  },
+  "clear/popup"(state) {
+    state.popupState = {
+      $display: false,
+      $timestamp: -1,
+    };
   },
 };
 

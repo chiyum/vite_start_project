@@ -1,6 +1,12 @@
 const state = () => {
   return {
-    helloword: "hello",
+    marquee: [], //跑馬燈
+    /** popup */
+    popupState: {
+      $display: false,
+      $timestamp: -1,
+    },
+    tips: [],
   };
 };
 //主要state

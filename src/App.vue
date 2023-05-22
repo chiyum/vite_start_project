@@ -1,18 +1,20 @@
 <template>
   <!-- 外層利用is載入layout -->
   <component :is="layout">
-    <!-- 內層利用router顯示 透過解構賦值 取得從router-view取得的component 在把Component用在:is＝"Component"身上 -->
-    <!-- 而之所以多個v-slot這個動作而非直接使用rotuer-view是因為原先有要做跳轉動畫 所以直接使用router-view也是可以的 -->
+    <!-- 內層利用router顯示 透過解構賦值 取得從router-view取得的component 在把Component用在:is＝"Component"身上-->
     <router-view v-slot="{ Component }">
       <component :is="Component" />
     </router-view>
   </component>
+
+  <the-popup />
 </template>
 
 <script>
 import { computed, onMounted } from "vue";
 import { useStore } from "vuex";
 import { isNil, defaultTo, path } from "ramda";
+// import pro168 from "@/assets/images/pro168_logo.png";
 export default {
   setup() {
     const store = useStore(); //啟用vuex
@@ -34,7 +36,10 @@ export default {
       return currentLayout;
     });
 
-    onMounted(() => {});
+    onMounted(() => {
+      // computeSize();
+      // window.addEventListener("resize", computeSize);
+    });
 
     return {
       layout,
