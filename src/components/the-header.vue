@@ -44,7 +44,7 @@ export default {
 .go-back {
   width: 0.45rem;
   height: 0.45rem;
-  background-image: url("@/assets/images/trade/icon_back.svg");
+  background-image: url("@/assets/images/icon_back.svg");
   background-repeat: no-repeat;
   background-size: cover;
 }
