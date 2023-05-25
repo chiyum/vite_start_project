@@ -64,7 +64,6 @@ import useI18n from "@/hooks/use-i18n";
 /** components */
 import BottomPicker from "@/widgets/bottom-picker";
 import { getImageUrl } from "@/tool";
-import oldBg from "@/assets/images/login/login_background_sm.png";
 export default {
   components: { BottomPicker },
   setup() {
@@ -98,7 +97,6 @@ export default {
       }, 1000);
     };
     return {
-      oldBg,
       locale,
       localeSwitcher,
       t,
