@@ -10,7 +10,7 @@
 
 - **.env.development** 開發模式
 - **.env.production** 生產模式
-- **.env.production** 測試模式
+- **.env.uat** 測試模式
 
 ## Setup
 
