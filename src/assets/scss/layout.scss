@@ -40,3 +40,9 @@
   //   height: 20px;
   // }
 }
+
+@media (max-width: 520px) {
+  .layout-deafult-header {
+    padding: 0 1rem;
+  }
+}
