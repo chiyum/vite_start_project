@@ -78,7 +78,7 @@ import { usePopup } from "@/hooks/use-popup";
 
 /** components */
 import Modal from "@/widgets/popup/modal";
-import VipModal from "@/widgets/popup/vip.vue";
+// import VipModal from "@/widgets/popup/vip.vue";
 
 const popupService = usePopup();
 const state = computed(() => popupService.state); // 儲存在全局的彈窗狀態
@@ -96,8 +96,8 @@ const resolve = (options) => {
 /* 外匡樣式彈窗 */
 const popupComp = computed(() => {
   switch (state.value.type) {
-    case "Vip": // vip通知
-      return markRaw(VipModal);
+    // case "Vip": // vip通知
+    //   return markRaw(VipModal);
     default:
       return markRaw(Modal); // 預設使用sweetalert樣式
   }

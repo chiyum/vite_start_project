@@ -13,7 +13,6 @@ import components from "@/_app/components";
 import providers from "@/_app/providers";
 import "./assets/main.scss";
 import "@fortawesome/fontawesome-free/js/all";
-import directive from "./directive";
 
 // import drag from "@/_app/buoyMove";
 const app = createApp(App);
@@ -27,7 +26,6 @@ app.use(VueLazyLoad, {
   loading: "",
   error: "",
 });
-app.use(directive);
 // app.use(drag);
 
 /** services register / 自定義hook */

@@ -1,0 +1,19 @@
+.home-bg {
+  &-person,&-middle {
+    position: absolute;
+  }
+  &-person {
+    bottom:0;
+    left: 55%;
+    transform: translate(-50%, 0%);
+    width: 30%;
+    min-width: 357px;
+    min-height: 548px;
+    z-index: 5;
+  }
+  &-middle {
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

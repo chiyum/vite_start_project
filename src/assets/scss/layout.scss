@@ -1,0 +1,42 @@
+.layout-deafult-header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 7.5rem;
+  width: 100%;
+  height: 6rem;
+  & > div {
+    display: flex;
+    align-items: center;
+  }
+  .paypal-icon {
+    margin-right: -8px;
+  }
+  &-middle {
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
+
+.layout-deafult {
+  margin-top: 6rem;
+}
+
+.default-icon {
+  padding: 12px;
+  border-radius: 50%;
+  background: #e0e2f0;
+  margin: 0 3px;
+  img {
+    width: 24px;
+    height: 24px;
+    max-width: 24px;
+  }
+  // img {
+  //   width: 20px;
+  //   height: 20px;
+  // }
+}

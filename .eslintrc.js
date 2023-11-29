@@ -28,5 +28,6 @@ module.exports = {
     'vue/name-property-casing': 'off',
     'vue/name-property-casing': 'off',
     'vue/component-name-in-template-casing': 'off',
+    'vue/multi-word-component-names': 'off',
   },
 };

@@ -1,5 +1,7 @@
 @import "css/tailwind.css";
 @import "css/animate.css";
+@import "scss/layout.scss";
+@import "scss/home.scss";
 
 html,
 body {
@@ -8,61 +10,61 @@ body {
   // overflow: hidden;
 }
 
-#app {
+// #app {
   // height: 100vh;
   // min-height: 100%;
   // overflow: hidden;
-}
+// }
 
-.home {
-  overflow-x: hidden;
-  &-head {
-  }
-  &-actions {
-    display: flex;
-    align-items: center;
-    &-btn {
-      display: inline-block;
-      padding: 10px 20px;
-      margin: 0 0.3rem;
-      font-size: 15px;
-      font-weight: 600;
-      // width: 120px;
-      text-transform: uppercase;
-      background: #c3c3c3;
-      border: none;
-      cursor: pointer;
-      transform: skew(-21deg);
-      span {
-        display: inline-block;
-        transform: skew(21deg);
-      }
+// .home {
+//   overflow-x: hidden;
+//   // &-head {
+//   // }
+//   &-actions {
+//     display: flex;
+//     align-items: center;
+//     &-btn {
+//       display: inline-block;
+//       padding: 10px 20px;
+//       margin: 0 0.3rem;
+//       font-size: 15px;
+//       font-weight: 600;
+//       // width: 120px;
+//       text-transform: uppercase;
+//       background: #c3c3c3;
+//       border: none;
+//       cursor: pointer;
+//       transform: skew(-21deg);
+//       span {
+//         display: inline-block;
+//         transform: skew(21deg);
+//       }
 
-      &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 100%;
-        left: 0;
-        background: rgb(20, 20, 20);
-        opacity: 0;
-        z-index: -1;
-        transition: all 0.5s;
-      }
+//       &::before {
+//         content: "";
+//         position: absolute;
+//         top: 0;
+//         bottom: 0;
+//         right: 100%;
+//         left: 0;
+//         background: rgb(20, 20, 20);
+//         opacity: 0;
+//         z-index: -1;
+//         transition: all 0.5s;
+//       }
 
-      &:hover {
-        color: #fff;
-      }
+//       &:hover {
+//         color: #fff;
+//       }
 
-      &:hover::before {
-        left: 0;
-        right: 0;
-        opacity: 1;
-      }
-    }
-  }
-}
+//       &:hover::before {
+//         left: 0;
+//         right: 0;
+//         opacity: 1;
+//       }
+//     }
+//   }
+// }
 
 .swal2-wrap {
   // max-width: 300px;
