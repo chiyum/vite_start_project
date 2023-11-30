@@ -1,5 +1,15 @@
 <template>
-  <div class="home-bg-middle"></div>
+  <div class="home-bg-middle">
+    <div>
+      <img src="@/assets/images/svg/img_wing.svg" alt="" />
+      <img src="@/assets/images/svg/img_wing.svg" alt="" />
+    </div>
+    <div>
+      <img src="@/assets/images/svg/img_wing.svg" alt="" />
+      <img src="@/assets/images/svg/img_wing.svg" alt="" />
+    </div>
+  </div>
+  <!-- <div class="home-bg-accessory"></div> -->
   <img class="home-bg-person" src="@/assets/images/home/person.png" alt="" />
   <img class="home-bg-line" src="@/assets/images/home/bg-line.png" alt="" />
   <img
@@ -44,6 +54,7 @@ export default {
         getImageUrl("home/bg-master.png"),
         getImageUrl("home/bg-left-top.png"),
         getImageUrl("home/bg-left-bottom.png"),
+        getImageUrl("svg/img_wing.svg"),
       ];
       imagesToPreload.forEach((image) => {
         preloadImage(image);

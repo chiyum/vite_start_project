@@ -167,7 +167,7 @@
 
 @keyframes accessoryLeftChange {
   0% {
-    transform: rotate(-30deg);
+    transform: rotate(0deg);
   }
   100% {
     transform: rotate(-45deg);
@@ -176,7 +176,7 @@
 
 @keyframes accessoryRightChange {
   0% {
-    transform: rotate(30deg) rotateY(180deg);
+    transform: rotate(0deg) rotateY(180deg);
   }
   100% {
     transform: rotate(45deg) rotateY(180deg);
