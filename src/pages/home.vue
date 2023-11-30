@@ -27,11 +27,11 @@
 <script>
 // import { onMounted, reactive } from "vue";
 import preloadImage from "@/unit/preloadImg";
-import { getImageUrl } from "@/tool";
+import { getImageUrl } from "@/unit/getImageUrl";
 import { useI18n } from "@/hooks/use-i18n";
 
 export default {
-  title: "pages.home.title",
+  // title: "pages.home.title",
   setup() {
     const { t, setPrefix } = useI18n();
     setPrefix({

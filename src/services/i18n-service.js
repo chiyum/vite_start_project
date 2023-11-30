@@ -2,11 +2,10 @@ import { createI18n } from "@arshown/vue3-i18n";
 import messages from "@/_app/locales";
 import storage from "@/plugins/storage";
 
-const initLocale = ((env) => {
+const initLocale = (() => {
   const keepLocale = storage.get("locale");
+  console.log(keepLocale, "keepLocale");
   if (keepLocale) return keepLocale;
-
-  if (env === "demo") return "vi";
 
   // 偵測使用者所在地區來去判斷語言
   let userLang =

@@ -1,5 +1,5 @@
 .layout-deafult-header {
-  position: absolute;
+  position: sticky;
   left: 0;
   top: 0;
   display: flex;
@@ -21,9 +21,9 @@
   }
 }
 
-.layout-deafult {
-  margin-top: 6rem;
-}
+// .layout-deafult {
+//   margin-top: 6rem;
+// }
 
 .default-icon {
   padding: 12px;

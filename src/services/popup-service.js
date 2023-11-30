@@ -60,30 +60,6 @@ export class PopupService {
     });
   }
 
-  async vip(option = {}) {
-    const {
-      title,
-      component = null,
-      confirmButtonText = i18n.t("button.confirm"),
-      allowOutsideClick = true,
-      props = {},
-    } = option;
-    /* 這邊使用prmise的原因是因為要使用非異步 */
-    return new Promise((resolve) => {
-      store.commit("app/set/popup", {
-        ...this.initStates,
-        type: "Vip",
-        resolve,
-        title,
-        component: component ? markRaw(component) : null,
-        showConfirmButton: true,
-        confirmButtonText,
-        allowOutsideClick,
-        props,
-      });
-    });
-  }
-
   clear() {
     store.commit("app/clear/popup");
   }

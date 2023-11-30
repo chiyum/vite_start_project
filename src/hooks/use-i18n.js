@@ -1,6 +1,7 @@
 import { ref } from "vue";
 import { useI18n as useVue3I18n } from "@arshown/vue3-i18n";
 import { split, join } from "ramda";
+import storage from "@/services/storage-service";
 
 export const useI18n = () => {
   const i18n = useVue3I18n();
@@ -20,9 +21,14 @@ export const useI18n = () => {
     } else return i18n.t(str, params);
   };
 
+  const change = (lang) => {
+    i18n.setLocale(lang);
+    storage.provider.set("locale", lang);
+  };
+
   return {
     locale: i18n.locale,
-    change: i18n.setLocale,
+    change,
     setPrefix,
     t: transfer,
     addMessages: i18n.addMessages,

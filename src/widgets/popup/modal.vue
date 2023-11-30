@@ -18,14 +18,14 @@
 
 <style lang="scss">
 .popup-modal .cancel-button {
-  font-size: 0.35rem;
+  font-size: 1rem;
   padding: 0.2rem;
   flex: 1;
 }
 
 .popup-modal .confirm-button {
   color: #526fe8;
-  font-size: 0.35rem;
+  font-size: 1rem;
   padding: 0.2rem;
   flex: 1;
 }
