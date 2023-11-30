@@ -49,6 +49,33 @@
     //   filter: blur(0);
     //   background-size: 85%;
     // }
+    img {
+      // width: 104px;
+      // height: 158px;
+      width: 50%;
+    }
+    & > div {
+      position: relative;
+      bottom: 20%;
+      display: flex;
+    }
+    div:nth-child(1) {
+      img {
+        animation: accessoryLeftChange var(--forward) forwards;
+        &:nth-child(1) {
+          margin-right: 2rem;
+        }
+      }
+    }
+    div:nth-child(2) {
+      img {
+        transform: rotateY(180deg);
+        animation: accessoryRightChange var(--forward) forwards;
+        &:nth-child(2) {
+          margin-left: 2rem;
+        }
+      }
+    }
   }
 
   &-line {
@@ -340,6 +367,7 @@
     &-person {
       animation: person520Change var(--forward) forwards;
       left: 62%;
+      min-width: 500px
     }
     &-middle {
       background-size: 200%;
