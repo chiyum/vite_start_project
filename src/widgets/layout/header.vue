@@ -4,13 +4,13 @@
       <div class="default-icon">
         <img src="@/assets/images/svg/home-2.svg" alt="" />
       </div>
-      <div class="default-icon">
+      <div class="default-icon mobile-hide">
         <img src="@/assets/images/svg/story.svg" alt="" />
       </div>
     </div>
     <div class="layout-deafult-header-middle">{{ title }}</div>
     <div class="layout-deafult-header-right">
-      <div class="default-icon paypal-icon">
+      <div class="default-icon paypal-icon mobile-hide">
         <img src="@/assets/images/svg/paypal.svg" alt="" />
       </div>
       <div class="default-icon">
