@@ -1,5 +1,6 @@
 <template>
-  <div class="home-bg-middle">
+  <div class="home-bg-middle"></div>
+  <div class="home-bg-accessory">
     <div>
       <img src="@/assets/images/svg/img_wing.svg" alt="" />
       <img src="@/assets/images/svg/img_wing.svg" alt="" />
@@ -9,7 +10,6 @@
       <img src="@/assets/images/svg/img_wing.svg" alt="" />
     </div>
   </div>
-  <!-- <div class="home-bg-accessory"></div> -->
   <img class="home-bg-person" src="@/assets/images/home/person.png" alt="" />
   <img class="home-bg-line" src="@/assets/images/home/bg-line.png" alt="" />
   <img

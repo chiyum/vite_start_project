@@ -34,13 +34,9 @@
   //   background-size: 357px 548px;
   // }
   &-middle {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding: 0 5%;
-    width: 100%;
+    width: 70%;
     height: 50%;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: url("@/assets/images/home/bg-master.png") no-repeat center;
@@ -53,6 +49,28 @@
     //   filter: blur(0);
     //   background-size: 85%;
     // }
+  }
+
+  &-line {
+    top: 20%;
+    right: 5%;
+    width: 4px;
+    height: 70%;
+    object-fit: cover;
+    animation: lineChange var(--forward) forwards;
+  }
+
+  &-accessory {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 32%;
+    padding: 0 18%;
+    height: 158px;
+    width: 98%;
+    animation: accessoryChange var(--forward) forwards;
+    animation-delay: 0.3s;
     img {
       // width: 104px;
       // height: 158px;
@@ -81,31 +99,6 @@
       }
     }
   }
-
-  &-line {
-    top: 20%;
-    right: 5%;
-    width: 4px;
-    height: 70%;
-    object-fit: cover;
-    animation: lineChange var(--forward) forwards;
-  }
-
-  // &-accessory {
-  //   position: absolute;
-  //   display: flex;
-  //   height: 158px;
-  //   width: 100%;
-  //   img {
-  //     // position: absolute;
-  //     // left: 0;
-  //     width: 104px;
-  //     height: 158px;
-  //     &:nth-child(3), &:nth-child(4){
-  //       transform: rotateY(180deg)
-  //     }
-  //   }
-  // }
 
   &-left {
     &-icon {
@@ -155,13 +148,35 @@
 @keyframes middleChange {
   0% {
     filter: blur(5px);
-    top: 50%;
-    width: 100%;
+    // top: 50%;
+    width: 70%;
   }
   100% {
     filter: blur(0);
-    top: 60%;
-    width: 70%;
+    // top: 60%;
+    width: 65%;
+  }
+}
+
+@keyframes accessoryChange {
+  0% {
+    top: 32%;
+    width: 98%;
+  }
+  100% {
+    top: 30%;
+    width: 100%;
+  }
+}
+
+@keyframes accessory820Change {
+  0% {
+    top: 32%;
+    width: 98%;
+  }
+  100% {
+    top: 38%;
+    width: 100%;
   }
 }
 
@@ -183,12 +198,15 @@
   }
 }
 
+
 @keyframes middleMobileChange {
   0% {
     filter: blur(5px);
+    width: 70%;
   }
   100% {
     filter: blur(0);
+    width: 100%;
   }
 }
 
@@ -212,7 +230,7 @@
 
 @keyframes person920Change {
   0% {
-    width: 30%;
+    width: 40%;
   }
   100% {
     width: 50%;
@@ -221,7 +239,7 @@
 
 @keyframes person768Change {
   0% {
-    width: 30%;
+    width: 50%;
   }
   100% {
     width: 60%;
@@ -230,7 +248,7 @@
 
 @keyframes person620Change {
   0% {
-    width: 30%;
+    width: 55%;
   }
   100% {
     width: 65%;
@@ -239,10 +257,12 @@
 
 @keyframes person520Change {
   0% {
-    width: 30%;
+    width: 80%;
+    min-width: 420px;
   }
   100% {
     width: 95%;
+    min-width: 500px;
   }
 }
 
@@ -269,8 +289,8 @@
     &-person {
       animation: person1100Change var(--forward) forwards;
     }
-    &-middle {
-      padding: 0 1%;
+    &-accessory {
+      padding: 0 14%;
     }
   }
 }
@@ -285,27 +305,8 @@
 
 @media (max-width:820px) {
   .home-bg {
-    &-middle {
-      & > div {
-        bottom: 8%;
-        img {
-          width: 42%;
-        }
-      }
-      div:nth-child(1) {
-        img {
-          &:nth-child(1) {
-            margin-right: 1rem;
-          }
-        }
-      }
-      div:nth-child(2) {
-        img {
-          &:nth-child(2) {
-            margin-left: 1rem;
-          }
-        }
-      }
+    &-accessory {
+      animation: accessory820Change var(--forward) forwards;
     }
   }
 }
@@ -339,7 +340,6 @@
     &-person {
       animation: person520Change var(--forward) forwards;
       left: 62%;
-      min-width: 500px
     }
     &-middle {
       background-size: 200%;
