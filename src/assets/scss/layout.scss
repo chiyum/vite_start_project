@@ -30,10 +30,22 @@
   border-radius: 50%;
   background: #e0e2f0;
   margin: 0 3px;
+  cursor: pointer;
   img {
     width: 24px;
     height: 24px;
     max-width: 24px;
+  }
+  &-lang {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    font-size: 18px;
+    font-weight: 100;
+    font-family: "Courier New";
+    user-select: none;
   }
   // img {
   //   width: 20px;
