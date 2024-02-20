@@ -23,16 +23,17 @@
     alt=""
   />
   <div class="home-nav">
-    <ul class="home-nav-link">
-      <li @click="router.push('/cost')">{{ t("$current.nav.about") }}</li>
-      <li @click="router.push('/home')">{{ t("$current.nav.home") }}</li>
-      <li @click="router.push('/profit')">{{ t("$current.nav.more") }}</li>
-    </ul>
+    <div class="home-nav-shape"></div>
     <svg class="home-nav-svg" width="75" height="75">
       <polygon points="0,0 60,0 0,75" fill="white"></polygon>
     </svg>
     <!-- <div class="home-nav-triangle"></div> -->
   </div>
+  <ul class="home-nav-link">
+    <li @click="router.push('/cost')">{{ t("$current.nav.about") }}</li>
+    <li @click="router.push('/home')">{{ t("$current.nav.home") }}</li>
+    <li @click="router.push('/profit')">{{ t("$current.nav.more") }}</li>
+  </ul>
 </template>
 <script>
 // import { onMounted, reactive } from "vue";
