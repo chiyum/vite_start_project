@@ -13,7 +13,15 @@
     align-items: center;
   }
   .paypal-icon {
+    position: relative;
     margin-right: -8px;
+    a {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
   }
   &-middle {
     font-size: 20px;
@@ -56,5 +64,8 @@
 @media (max-width: 520px) {
   .layout-deafult-header {
     padding: 0 1rem;
+    .paypal-icon {
+      margin-right: 0;
+    }
   }
 }

@@ -7,6 +7,8 @@ import storage from "@/plugins/storage";
 import sweetalert from "@/plugins/sweetalert";
 import tabsslider from "@/plugins/tabsslider";
 import VueLazyLoad from "vue3-lazyload";
+// import ViewUIPlus from "view-ui-plus";
+// import "view-ui-plus/dist/styles/viewuiplus.css";
 /** _app */
 import layouts from "@/_app/layouts";
 import components from "@/_app/components";
@@ -21,6 +23,7 @@ app.provide("$swal", sweetalert);
 app.provide("$storage", storage);
 app.provide("$tabsslider", tabsslider);
 app.use(layouts);
+// app.use(ViewUIPlus);
 app.use(components);
 app.use(VueLazyLoad, {
   loading: "",

@@ -10,4 +10,5 @@ export default {
   submit: "送出",
   outsideclose: "點擊周圍關閉",
   to: "立刻前往",
+  count: "計算",
 };

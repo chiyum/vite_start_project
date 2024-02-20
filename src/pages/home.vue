@@ -24,9 +24,9 @@
   />
   <div class="home-nav">
     <ul class="home-nav-link">
-      <li>{{ t("$current.nav.home") }}</li>
-      <li>{{ t("$current.nav.more") }}</li>
-      <li>{{ t("$current.nav.about") }}</li>
+      <li @click="router.push('/cost')">{{ t("$current.nav.about") }}</li>
+      <li @click="router.push('/home')">{{ t("$current.nav.home") }}</li>
+      <li @click="router.push('/profit')">{{ t("$current.nav.more") }}</li>
     </ul>
     <svg class="home-nav-svg" width="75" height="75">
       <polygon points="0,0 60,0 0,75" fill="white"></polygon>
@@ -39,11 +39,13 @@
 import preloadImage from "@/unit/preloadImg";
 import { getImageUrl } from "@/unit/getImageUrl";
 import { useI18n } from "@/hooks/use-i18n";
+import { useRouter } from "vue-router";
 
 export default {
   // title: "pages.home.title",
   setup() {
     const { t, setPrefix } = useI18n();
+    const router = useRouter();
     setPrefix({
       $current: "pages.home",
     });
@@ -63,10 +65,8 @@ export default {
     preloadImages();
     return {
       t,
+      router,
     };
   },
 };
 </script>
-<style lang="scss">
-@import "@/assets/scss/home.scss";
-</style>

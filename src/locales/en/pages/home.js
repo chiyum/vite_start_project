@@ -9,4 +9,6 @@ export default {
   "nav.home": "Home",
   "nav.more": "Read More",
   "nav.about": "About",
+  "nav.profit": "Profit",
+  "nav.cost": "Processing",
 };

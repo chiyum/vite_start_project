@@ -10,4 +10,5 @@ export default {
   submit: "Send", //送出
   outsideclose: "Click around to close",
   to: "Go now", //立刻前往
+  count: "計算",
 };

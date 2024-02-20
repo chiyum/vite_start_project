@@ -20,6 +20,7 @@ for (let path in files) {
       title: defaults[path].default?.title ?? "app.project.title",
       header: defaults[path].default?.header ?? "header-default",
       scroll: defaults[path].default?.noScroll ?? false,
+      // inSidebar: defaults[path].default?.inSidebar ?? true, // 後續自動新增sidebar
     },
     component: files[path], //頁面component
   });
