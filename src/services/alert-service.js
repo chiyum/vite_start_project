@@ -54,8 +54,25 @@ export class AlertService {
 
   showLoading() {
     return this.provider.fire({
-      title: "winner winner chicken dinner",
+      // title: "loading",
       showConfirmButton: false,
+      html: `<div class="loader">
+      <svg viewBox="0 0 80 80">
+          <circle id="test" cx="40" cy="40" r="32"></circle>
+      </svg>
+  </div>
+
+  <div class="loader triangle">
+      <svg viewBox="0 0 86 80">
+          <polygon points="43 8 79 72 7 72"></polygon>
+      </svg>
+  </div>
+
+  <div class="loader">
+      <svg viewBox="0 0 80 80">
+          <rect x="8" y="8" width="64" height="64"></rect>
+      </svg>
+  </div>`,
       customClass: "swal2-loading",
       showClass: {
         popup: "animate__animated animate__fadeIn",
@@ -63,7 +80,8 @@ export class AlertService {
       hideClass: {
         popup: "animate__animated animate__fadeOut",
       },
-      background: "transparent",
+      background: "none",
+      backdrop: "#ffffff",
     });
   }
 

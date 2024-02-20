@@ -49,7 +49,7 @@ export class PopupService {
         resolve,
         title,
         text,
-        component: component ? markRaw(component) : null,
+        component: component ? markRaw(component) : null, // 這邊使用markRaw防止變成響應式
         showCancelButton,
         showConfirmButton,
         confirmButtonText,
