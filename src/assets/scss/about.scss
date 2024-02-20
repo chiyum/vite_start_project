@@ -1,0 +1,31 @@
+.about {
+  padding: 2rem 5% 0;
+  &-title {
+    color: #000000;
+  }
+  &-subtitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #868686;
+    font-size: 18px;
+    margin: 2rem 0;
+  }
+  &-cover {
+    height: 70vh;
+    margin: 0 auto;
+    object-fit: cover;
+  }
+  &-content {
+    h2 {
+      margin-bottom: 0.3rem;
+      font-weight: bold;
+    }
+    p, ul {
+      margin-bottom: 1rem;
+    }
+    .label {
+      font-weight: bold;
+    }
+  }
+}

@@ -31,9 +31,13 @@
       <!-- <div class="home-nav-triangle"></div> -->
     </div>
     <ul class="home-nav-link">
-      <li @click="router.push('/cost')">{{ t("$current.nav.about") }}</li>
+      <li @click="router.push('/about')">{{ t("$current.nav.about") }}</li>
       <li @click="router.push('/home')">{{ t("$current.nav.home") }}</li>
-      <li @click="router.push('/profit')">{{ t("$current.nav.more") }}</li>
+      <li>
+        <a href="https://github.com/chiyum/chiyum" target="_blank">{{
+          t("$current.nav.more")
+        }}</a>
+      </li>
     </ul>
   </div>
 </template>
@@ -68,6 +72,7 @@ export default {
         getImageUrl("home/bg-master.png"),
         getImageUrl("home/bg-left-top.png"),
         getImageUrl("home/bg-left-bottom.png"),
+        getImageUrl("profile/about-cover2.webp"),
         getImageUrl("svg/img_wing.svg"),
       ];
       /** 這邊等待圖片載入完成後 關閉loading頁面 重新顯示一次動畫 */
