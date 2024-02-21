@@ -28,4 +28,4 @@ yarn build:uat 測試模式
 
 ### Deploy
 
-執行 compile 之後根目錄下產生 `/dist` 檔案夾
+執行 compile 之後根目錄下產生 `/docs` 檔案夾
