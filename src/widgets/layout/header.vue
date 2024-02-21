@@ -12,7 +12,10 @@
     <div class="layout-deafult-header-right">
       <div class="default-icon paypal-icon">
         <img src="@/assets/images/svg/paypal.svg" alt="" />
-        <a href="https://github.com/chiyum/chiyum" target="_blank"></a>
+        <a
+          href="https://github.com/chiyum/vite_start_project"
+          target="_blank"
+        ></a>
       </div>
       <div class="default-icon mobile-hide" @click="changeLang">
         <img src="@/assets/images/svg/world_2.svg" alt="" />
