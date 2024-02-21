@@ -45,11 +45,13 @@ const route = useRoute();
 const router = useRouter();
 const title = computed(() => t(route.meta.title ?? ""));
 
-const changePage = (path = "/home") => {
-  router.push(path);
-};
 const reload = () => {
   router.go(0);
+};
+
+const changePage = (path = "/home") => {
+  if (route.path === path) reload();
+  router.push(path);
 };
 
 const changeLang = () => {

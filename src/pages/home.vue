@@ -31,8 +31,8 @@
       <!-- <div class="home-nav-triangle"></div> -->
     </div>
     <ul class="home-nav-link">
-      <li @click="router.push('/about')">{{ t("$current.nav.about") }}</li>
-      <li @click="router.push('/home')">{{ t("$current.nav.home") }}</li>
+      <li @click="changePage('/about')">{{ t("$current.nav.about") }}</li>
+      <li @click="changePage('/home')">{{ t("$current.nav.home") }}</li>
       <li>
         <a href="https://github.com/chiyum/chiyum" target="_blank">{{
           t("$current.nav.more")
@@ -45,7 +45,7 @@
 // import { onMounted, reactive } from "vue";
 import { getImageUrl } from "@/unit/getImageUrl";
 import { useI18n } from "@/hooks/use-i18n";
-import { useRouter } from "vue-router";
+import { useRouter, useRoute } from "vue-router";
 import { ref, nextTick } from "vue";
 import { loadImages } from "@/unit/loadImage";
 import alertService from "@/services/alert-service";
@@ -55,10 +55,20 @@ export default {
   setup() {
     const { t, setPrefix } = useI18n();
     const router = useRouter();
+    const route = useRoute();
     const isComponentVisible = ref(true);
     setPrefix({
       $current: "pages.home",
     });
+    const reload = () => {
+      router.go(0);
+    };
+
+    const changePage = (path = "/home") => {
+      if (route.path === path) reload();
+      router.push(path);
+    };
+
     const resetComponent = () => {
       isComponentVisible.value = false;
       nextTick(() => {
@@ -84,6 +94,7 @@ export default {
     preloadImages();
     return {
       t,
+      changePage,
       router,
     };
   },

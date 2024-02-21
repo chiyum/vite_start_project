@@ -169,6 +169,7 @@
     li {
       margin: 0 3%;
       cursor: pointer;
+      user-select:none;
     }
   }
   &-svg {
@@ -411,5 +412,8 @@
   .home-nav {
     width: 100%;
     left: 50%;
+    &-link {
+      bottom: 12%;
+    }
   }
 }
