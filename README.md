@@ -2,7 +2,7 @@
 
 ## Version
 
-- **Node.js** v16.14.2
+- **Node.js** v20.9.0
 - **yarn** v1.22.18
 - **vue** v3.2.25
 
