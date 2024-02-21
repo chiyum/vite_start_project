@@ -1,8 +1,16 @@
+const imageCache = {};
+
 export async function loadImage(imageUrl) {
+  if (imageCache[imageUrl]) {
+    return imageCache[imageUrl];
+  }
   let img;
   const imageLoadPromise = new Promise((resolve) => {
     img = new Image();
-    img.onload = resolve;
+    img.onload = () => {
+      resolve(img);
+      imageCache[imageUrl] = img;
+    };
     img.src = imageUrl;
   });
 
