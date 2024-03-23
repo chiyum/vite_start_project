@@ -1,4 +1,4 @@
-const files = import.meta.globEager("../services/*.js");
+const files = import.meta.glob("../services/*.js", { eager: true });
 
 const layouts = {
   install: (app) => {

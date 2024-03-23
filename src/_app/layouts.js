@@ -1,5 +1,5 @@
 /* 導入layoyt目錄中的.vue檔 */
-const files = import.meta.globEager("../layouts/*.vue");
+const files = import.meta.glob("../layouts/*.vue", { eager: true });
 const modules = [];
 // console.log(files);
 for (let path in files) {

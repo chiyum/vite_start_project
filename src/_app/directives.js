@@ -1,5 +1,5 @@
 import { getFilename } from "./_rename";
-const files = import.meta.globEager("../directives/*.js");
+const files = import.meta.glob("../directives/*.js", { eager: true });
 
 const layouts = {
   install: (app) => {

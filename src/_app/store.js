@@ -1,4 +1,4 @@
-const files = import.meta.globEager("../store/**/*.js");
+const files = import.meta.glob("../store/**/*.js", { eager: true });
 import * as R from "ramda";
 let modules = {};
 

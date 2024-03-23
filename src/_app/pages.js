@@ -1,6 +1,6 @@
 /* glob導入的為相對路徑(動態路徑) globEager則為絕對路徑(靜態路徑) */
 const files = import.meta.glob("../pages/**/*.vue");
-const defaults = import.meta.globEager("../pages/**/*.vue");
+const defaults = import.meta.glob("../pages/**/*.vue", { eager: true });
 const modules = [];
 for (let path in files) {
   /* 抓取路由 */

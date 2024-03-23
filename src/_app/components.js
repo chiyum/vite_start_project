@@ -1,5 +1,5 @@
 /* 轉換並且導入component中的vue檔 */
-const files = import.meta.globEager("../components/*.vue");
+const files = import.meta.glob("../components/*.vue", { eager: true });
 const modules = [];
 
 for (let path in files) {
