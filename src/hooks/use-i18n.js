@@ -1,9 +1,10 @@
 import { ref } from "vue";
 import { useI18n as useVue3I18n } from "@arshown/vue3-i18n";
 import { split, join } from "ramda";
-import storage from "@/services/storage-service";
+import { useAppStore } from "@/store/app-store";
 
 export const useI18n = () => {
+  const store = useAppStore();
   const i18n = useVue3I18n();
   const prefix = ref({});
   const setPrefix = (str) => {
@@ -23,7 +24,7 @@ export const useI18n = () => {
 
   const change = (lang) => {
     i18n.setLocale(lang);
-    storage.provider.set("locale", lang);
+    store.changeI18nLang(lang);
   };
 
   return {

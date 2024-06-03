@@ -12,19 +12,19 @@
 
 <script>
 import { computed, onMounted } from "vue";
-import { useStore } from "vuex";
+import { useRoute } from "vue-router";
 import { isNil, defaultTo, path } from "ramda";
 // import pro168 from "@/assets/images/pro168_logo.png";
 export default {
   setup() {
-    const store = useStore(); //啟用vuex
+    const route = useRoute();
     const layout = computed(() => {
       /* 一開始都是 undefined */
       /* isNil為檢查空值，為null或undefined則return null */
-      if (isNil(store.state.route.path)) return null;
+      if (isNil(route.path)) return null;
       /* 拿設定的 layout，預設是 default-layout */
       const currentLayout = defaultTo("layout-error")(
-        path(["meta", "layout"], store.state.route)
+        path(["meta", "layout"], route)
       );
       // defaulto的功用就是給預設值
       // 這邊的用法是先設定defaultTo預設值，

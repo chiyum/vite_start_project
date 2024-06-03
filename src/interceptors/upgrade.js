@@ -1,16 +1,17 @@
 import storage from "store2";
-import store from "@/store";
+import { useAuthStore } from "@/store/auth-store";
 
 // ! 此處邏輯尚未經過測試
 const upgrade = {
   use(instance) {
     instance.interceptors.response.use(
       async function (response) {
+        const store = useAuthStore();
         const data = response.data;
         if (data.code === 100004) {
           const res = instance.get("/app/jwt-token", {
             params: {
-              account: store.state.auth.user.account,
+              account: store.userData.account,
             },
           });
           if (res.data.code === 1) {

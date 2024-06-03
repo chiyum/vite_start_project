@@ -1,11 +1,6 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import createRoutes from "@/_app/routes";
-// import store from "@/services/store-service";
-// import alert from "@/services/alert-service";
-// import useCycle, { processNotifyData } from "@/cycle";
-// import storage from "store2";
-// import { checkPhone, toService } from "@/tool";
-// import { isEmpty } from "ramda";
+
 /* 設定預設導入頁面 */
 const options = {
   defaultPath: "/home",

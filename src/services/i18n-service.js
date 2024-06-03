@@ -3,8 +3,8 @@ import messages from "@/_app/locales";
 import storage from "@/plugins/storage";
 
 const initLocale = (() => {
+  // eslint-disable-next-line no-undef
   const keepLocale = storage.get("locale");
-  console.log(keepLocale, "keepLocale");
   if (keepLocale) return keepLocale;
 
   // 偵測使用者所在地區來去判斷語言

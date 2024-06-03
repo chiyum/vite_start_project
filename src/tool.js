@@ -1,6 +1,5 @@
 import swal from "@/plugins/sweetalert";
 import i18n from "@/i18n";
-import store from "@/store";
 import router from "@/router";
 import storage from "store2";
 
@@ -32,22 +31,6 @@ export const checkMobile = () => {
   });
   return isMobile;
 }; //用於偵測是否為行動裝置
-
-export const toService = () => {
-  let str = "";
-  for (const key in store.state.app.serviceUrl) {
-    const value = store.state.app.serviceUrl[key];
-    const styleClass = key.split("_")[0]; //取key字串 用於設定icon樣式
-    /* url不為空才加入 */
-    if (value !== "")
-      str += `<a class="service-list-icon ${styleClass}" target="_blank" href="${value}"></a>`;
-  }
-  swal.alert({
-    title: i18n.t("app.page.service"),
-    html: `<div class="service-list">${str}</div>`,
-    confirmButtonText: i18n.t("pages.home.welcome.close"),
-  });
-};
 
 export const setLang = (lang, isOrigin) => {
   const haveLangsImage = ["vi", "zh-tw", "en-ph"];
@@ -188,29 +171,6 @@ export const getNewdata = (localName, newData, judgmentName, judgmentthing) => {
   console.log("寫入");
   storage.set(localName, already);
   return never; //回傳整理完成的資料
-};
-
-export const checkPhone = async (option) => {
-  const { realName, env, phone } = option;
-  const isKo = env === "ko";
-  const isAlert = isKo ? realName || phone : phone;
-  if (!isAlert) {
-    return "/discount";
-  }
-  const { isConfirmed } = await swal.confirm({
-    title: i18n.t(`app.dialog.${isKo ? "setprofile" : "setphone"}.title`),
-    text: i18n.t(`app.dialog.${isKo ? "setprofile" : "setphone"}.text`),
-  });
-  if (!isConfirmed) return "cancel";
-  const shouldRedirectToPhone = !isKo || phone;
-  if (shouldRedirectToPhone) {
-    return "/account/phone";
-  } else {
-    if (phone && realName) {
-      store.commit("auth/set/nextBind", true);
-    }
-    return "/account/name";
-  }
 };
 
 export const setString = (str, n = 2, mask = "****") => {
