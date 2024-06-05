@@ -13,12 +13,12 @@ export default {
   "content.list.4":
     "Built-in internationalization support, facilitating multi-language expansion and management.",
   "content.list.5":
-    "Utilizes Vuex for state management, making data flow clearer and easier to maintain.",
+    "Utilizes pinia for state management, making data flow clearer and easier to maintain.",
   "content.text.3":
     "This project is an ideal choice for developers who wish to quickly build modern Vue 3 applications.",
   "content.list.title.1": "Vue 3 and Vite Integration",
   "content.list.title.2": "Packaged Modal System",
   "content.list.title.3": "Automated Routing",
   "content.list.title.4": "i18n Multilingual Support",
-  "content.list.title.5": "Vuex Integration",
+  "content.list.title.5": "pinia Integration",
 };
