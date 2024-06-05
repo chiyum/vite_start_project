@@ -43,11 +43,11 @@
 </template>
 <script>
 // import { onMounted, reactive } from "vue";
-import { getImageUrl } from "@/unit/getImageUrl";
+import { getImageUrl } from "@/utils/getImageUrl";
 import { useI18n } from "@/hooks/use-i18n";
 import { useRouter, useRoute } from "vue-router";
 import { ref, nextTick } from "vue";
-import { loadImages } from "@/unit/loadImage";
+import { loadImages } from "@/utils/loadImage";
 import alertService from "@/services/alert-service";
 
 export default {
@@ -100,3 +100,4 @@ export default {
   },
 };
 </script>
+@/utils/getImageUrl@/utils/loadImage
