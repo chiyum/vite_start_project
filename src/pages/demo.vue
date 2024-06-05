@@ -3,13 +3,17 @@
   <div class="demo">
     <div class="demo-head">
       <div>
-        <label class="switch">
+        <!-- <label class="switch">
           <input type="checkbox" class="cb" />
           <span class="toggle" @click="changeLang">
             <span class="left">CN</span>
             <span class="right">En</span>
           </span>
-        </label>
+        </label> -->
+        <q-tabs v-model="lang.current" narrow-indicator dense align="justify">
+          <q-tab class="text-primary" name="zh-tw" label="中文" />
+          <q-tab class="text-primary" name="en" label="English" />
+        </q-tabs>
       </div>
       <div class="demo-head-content">lang:{{ lang.current }}</div>
     </div>
@@ -33,7 +37,7 @@
   </div>
 </template>
 <script>
-import { onMounted, reactive } from "vue";
+import { watch, reactive } from "vue";
 import { useI18n } from "@/hooks/use-i18n";
 import { useRouter } from "vue-router";
 import { usePopup } from "@/hooks/use-popup";
@@ -72,14 +76,19 @@ export default {
         text: t("$current.modal.swal"),
       });
     };
-    const changeLang = () => {
-      const changed = lang.current === "zh-tw" ? "en" : "zh-tw";
-      lang.current = changed;
-      change(changed);
+    const changeLang = (newLang) => {
+      change(newLang);
       // lang.current = changed;
       // storage.set("locale", changed);
     };
-    onMounted(() => {});
+
+    watch(
+      () => lang.current,
+      (newLang) => {
+        changeLang(newLang);
+      }
+    );
+
     return {
       t,
       lang,

@@ -1,5 +1,6 @@
 import { createApp } from "vue";
 import { createPinia } from "pinia";
+import { Quasar, Loading, Dialog, Notify } from "quasar";
 import App from "./App";
 
 /** plugins */
@@ -8,11 +9,14 @@ import storage from "@/plugins/storage";
 import sweetalert from "@/plugins/sweetalert";
 import tabsslider from "@/plugins/tabsslider";
 import VueLazyLoad from "vue3-lazyload";
+import "@quasar/extras/material-icons/material-icons.css";
+import "quasar/src/css/index.sass";
 /** _app */
 import layouts from "@/_app/layouts";
 import components from "@/_app/components";
 import providers from "@/_app/providers";
 import directives from "@/_app/directives";
+/** other */
 import "./assets/main.scss";
 import "@fortawesome/fontawesome-free/js/all";
 
@@ -30,6 +34,14 @@ app.use(VueLazyLoad, {
   loading: "",
   error: "",
 });
+app.use(Quasar, {
+  plugins: {
+    Loading,
+    Dialog,
+    Notify,
+  },
+});
+
 // app.use(drag);
 
 /** services register / 自定義hook */

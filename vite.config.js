@@ -2,6 +2,7 @@ import { defineConfig, loadEnv } from "vite"; //loadEnv為取得env資訊
 import vue from "@vitejs/plugin-vue";
 import eslintPlugin from "vite-plugin-eslint";
 import html from "vite-plugin-html";
+import { quasar, transformAssetUrls } from "@quasar/vite-plugin";
 import { resolve } from "path";
 
 // https://vitejs.dev/config/
@@ -10,7 +11,12 @@ export default defineConfig(({ mode }) => {
   return {
     base: "./",
     plugins: [
-      vue(),
+      vue({
+        template: { transformAssetUrls },
+      }),
+      quasar({
+        sassVariables: "src/quasar-variables.sass",
+      }),
       eslintPlugin({
         cache: false,
       }),

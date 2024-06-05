@@ -24,14 +24,15 @@ export class PopupService {
       BackdropStyle: "rgba(0, 0, 0, 0.6)",
     };
     this.store = {};
-    /** 讓pinia最後在初始化 */
-    setTimeout(() => {
-      this.store = usePopupStore();
-    }, 0);
   }
 
   get state() {
     return this.store.popupState;
+  }
+
+  /** 待vue元件掛載完成後 掛載pinia */
+  init() {
+    this.store = usePopupStore();
   }
 
   async modal(option = {}) {
@@ -69,12 +70,14 @@ export class PopupService {
     this.store.clearPopupState();
   }
 }
+const instance = new PopupService();
 
 /** 會在main.js加載 */
 PopupService.prototype.install = function install(app) {
+  instance.init();
   const provideName = "popup-service";
   app.config.globalProperties[provideName] = this;
   app.provide(provideName, this);
 };
 
-export default new PopupService();
+export default instance;
