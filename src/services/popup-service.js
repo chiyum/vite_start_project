@@ -24,6 +24,10 @@ export class PopupService {
       BackdropStyle: "rgba(0, 0, 0, 0.6)",
     };
     this.store = {};
+    /** 讓pinia最後在初始化 */
+    setTimeout(() => {
+      this.store = usePopupStore();
+    }, 0);
   }
 
   get state() {
@@ -31,7 +35,6 @@ export class PopupService {
   }
 
   async modal(option = {}) {
-    this.store = usePopupStore();
     const {
       title,
       text,
@@ -63,11 +66,11 @@ export class PopupService {
   }
 
   clear() {
-    this.store = usePopupStore();
     this.store.clearPopupState();
   }
 }
 
+/** 會在main.js加載 */
 PopupService.prototype.install = function install(app) {
   const provideName = "popup-service";
   app.config.globalProperties[provideName] = this;

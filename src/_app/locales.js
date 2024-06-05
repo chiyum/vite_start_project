@@ -14,9 +14,6 @@ for (let path in files) {
   const [locale, ...paths] = pathToFile.split("/");
   const messageKey = R.join(".", paths); // 語系key
   const fileObj = files[path].default; // 語系value
-  console.log(locale, "locale"); //path為該語系資料夾名稱
-  console.log(paths, "paths"); //path為該語系資料夾名稱
-  console.log(messageKey, "messagesKey"); //path為該語系資料夾名稱
   messages[locale] = R.reduce(
     (merge, key) =>
       /** 合併每個 */

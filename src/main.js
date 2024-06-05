@@ -16,16 +16,16 @@ import directives from "@/_app/directives";
 import "./assets/main.scss";
 import "@fortawesome/fontawesome-free/js/all";
 
-const pinia = createPinia();
 const app = createApp(App);
+const pinia = createPinia();
 app.provide("$jQuery", jquery);
 app.provide("$swal", sweetalert);
 app.provide("$storage", storage);
 app.provide("$tabsslider", tabsslider);
+app.use(pinia);
 app.use(layouts);
 app.use(directives);
 app.use(components);
-app.use(pinia);
 app.use(VueLazyLoad, {
   loading: "",
   error: "",
