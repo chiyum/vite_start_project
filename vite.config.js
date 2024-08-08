@@ -1,7 +1,7 @@
 import { defineConfig, loadEnv } from "vite"; //loadEnv為取得env資訊
 import vue from "@vitejs/plugin-vue";
 import eslintPlugin from "vite-plugin-eslint";
-import html from "vite-plugin-html";
+import { createHtmlPlugin } from "vite-plugin-html"; // 确保正确导入 html 插件
 import { quasar, transformAssetUrls } from "@quasar/vite-plugin";
 import { resolve } from "path";
 
@@ -19,9 +19,11 @@ export default defineConfig(({ mode }) => {
       }),
       eslintPlugin({
         cache: false,
+        overrideConfigFile: ".eslintrc.cjs",
+        // formatter: "json",
       }),
       /* 這邊使用 vite-plugin-html在build時可讓index.html抓取環境變數 */
-      html({
+      createHtmlPlugin({
         inject: {
           data: {
             title: env.VITE_LOGO_NAME,
