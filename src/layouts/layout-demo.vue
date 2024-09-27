@@ -4,8 +4,10 @@
   </div>
 </template>
 
-<script>
-export default {
-  setup() {},
-};
+<script setup>
+import { defineOptions } from "vue";
+
+defineOptions({
+  layout: "layout-demo",
+});
 </script>
