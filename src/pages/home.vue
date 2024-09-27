@@ -46,7 +46,6 @@
 import { getImageUrl } from "@/utils/getImageUrl";
 import { useI18n } from "@/hooks/use-i18n";
 import { useRouter, useRoute } from "vue-router";
-import { ref, nextTick } from "vue";
 import { loadImages } from "@/utils/loadImage";
 import alertService from "@/services/alert-service";
 
@@ -100,4 +99,3 @@ export default {
   },
 };
 </script>
-@/utils/getImageUrl@/utils/loadImage

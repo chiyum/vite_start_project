@@ -49,7 +49,7 @@
     "swiper": "8.0.7",
     "tabs-slider": "3.1.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@2.2.17",
-    "vite": "5.2.4",
+    "vite": "5.4.8",
     "vue": "3.4.27",
     "vue-advanced-cropper": "2.8.1",
     "vue-router": "4.0.0-rc.1",
@@ -76,6 +76,7 @@
     "stylelint-config-rational-order": "0.1.2",
     "stylelint-config-standard": "22.0.0",
     "stylelint-prettier": "1.2.0",
+    "unplugin-auto-import": "0.18.3",
     "vite-plugin-eslint": "1.8.1",
     "vite-plugin-html": "3.2.2",
     "vue-eslint-parser": "9.1.0"
