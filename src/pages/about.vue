@@ -28,16 +28,11 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import { useI18n } from "@/hooks/use-i18n";
-
-export default {
+import { defineOptions } from "vue";
+defineOptions({
   title: "pages.home.nav.about",
-  setup() {
-    const { t } = useI18n();
-    return {
-      t,
-    };
-  },
-};
+});
+const { t } = useI18n();
 </script>

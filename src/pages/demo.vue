@@ -3,13 +3,6 @@
   <div class="demo">
     <div class="demo-head">
       <div>
-        <!-- <label class="switch">
-          <input type="checkbox" class="cb" />
-          <span class="toggle" @click="changeLang">
-            <span class="left">CN</span>
-            <span class="right">En</span>
-          </span>
-        </label> -->
         <q-tabs v-model="lang.current" narrow-indicator dense align="justify">
           <q-tab class="text-primary" name="zh-tw" label="中文" />
           <q-tab class="text-primary" name="en" label="English" />
@@ -36,70 +29,75 @@
     </div>
   </div>
 </template>
-<script>
-import { watch, reactive } from "vue";
-import { useI18n } from "@/hooks/use-i18n";
-import { useRouter } from "vue-router";
-import { usePopup } from "@/hooks/use-popup";
-import { useAlert } from "@/hooks/use-alert";
 
-export default {
+<script setup>
+import { defineOptions } from "vue"; // 引入 Vue 核心功能
+import { useI18n } from "@/hooks/use-i18n"; // 引入 i18n 鉤子
+import { useRouter } from "vue-router"; // 引入路由鉤子
+import { usePopup } from "@/hooks/use-popup"; // 引入彈窗鉤子
+import { useAlert } from "@/hooks/use-alert"; // 引入警示彈窗鉤子
+
+defineOptions({
   layout: "layout-demo",
-  setup() {
-    // import storage from "store2";
-    const popup = usePopup();
-    const { t, locale, setPrefix, change } = useI18n();
-    setPrefix({
-      $current: "pages.demo",
-    });
-    const router = useRouter();
-    const swal = useAlert();
-    const lang = reactive({
-      current: locale.value || "zh-tw",
-    });
-    const popupModal = async () => {
-      await popup.modal({
-        title: "popup",
-        text: "this a popup",
-        // props: {
-        //   title: t("pages.home.notify.vip.title"),
-        //   text: "VIP 1",
-        // },
-      });
-    };
-    const toHome = () => {
-      router.push("/home");
-    };
-    const swalModal = () => {
-      swal.alert({
-        title: t("$current.modal.swal.title"),
-        text: t("$current.modal.swal"),
-      });
-    };
-    const changeLang = (newLang) => {
-      change(newLang);
-      // lang.current = changed;
-      // storage.set("locale", changed);
-    };
+});
 
-    watch(
-      () => lang.current,
-      (newLang) => {
-        changeLang(newLang);
-      }
-    );
+// 使用 popup 模塊來處理彈窗
+const popup = usePopup();
 
-    return {
-      t,
-      lang,
-      toHome,
-      swalModal,
-      changeLang,
-      popupModal,
-    };
-  },
+// 使用 i18n 模塊來處理語言切換與翻譯
+const { t, locale, setPrefix, change } = useI18n();
+
+// 設定翻譯前綴
+setPrefix({
+  $current: "pages.demo",
+});
+
+// 使用路由功能
+const router = useRouter();
+
+// 使用 swal 模塊來處理警示彈窗
+const swal = useAlert();
+
+// 設定語言的 reactive 狀態
+const lang = reactive({
+  current: locale.value || "zh-tw",
+});
+
+// 跳轉至首頁的方法
+const toHome = () => {
+  router.push("/home");
 };
+
+// 顯示 Swal 警示彈窗的方法
+const swalModal = () => {
+  swal.alert({
+    title: t("$current.modal.swal.title"),
+    text: t("$current.modal.swal"),
+  });
+};
+
+// 顯示 Popup 彈窗的方法
+const popupModal = async () => {
+  await popup.modal({
+    title: "popup",
+    text: "this a popup",
+  });
+};
+
+// 切換語言的方法
+const changeLang = (newLang) => {
+  change(newLang); // 更改語言
+};
+
+// 監視語言變化
+watch(
+  () => lang.current,
+  (newLang) => {
+    changeLang(newLang);
+  }
+);
 </script>
+
 <style lang="scss">
 @import "@/assets/scss/home.scss";
 </style>
